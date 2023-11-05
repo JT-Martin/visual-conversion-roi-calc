@@ -1,4 +1,5 @@
 <script>
+  import { onMount, onDestroy } from "svelte";
   let conversionRate = 10;
   let conversionAmount = 30;
   let conversionValue = 1000;
@@ -20,11 +21,45 @@
       Number(conversionAmount),
   );
   $: totalConv = Number(conversionAmount) + Number(additionalConv);
+
+  let containerWidth = 0;
+  let containerHeight = 0;
+  let container;
+
+  // Function to update dimensions
+  function updateDimensions() {
+    const appContainer = document.getElementById("app-container");
+    if (appContainer) {
+      containerWidth = appContainer.clientWidth;
+      containerHeight = appContainer.clientHeight;
+      console.log(containerWidth);
+      console.log(containerHeight);
+
+      // Send the dimensions to the parent page
+      window.parent.postMessage(
+        { width: containerWidth, height: containerHeight },
+        "*",
+      );
+    }
+  }
+
+  // Call the updateDimensions function initially
+  onMount(updateDimensions);
+
+  // Add event listener to recalculate dimensions on window resize
+  window.addEventListener("resize", updateDimensions);
+
+  // Remove event listener when component unmounts
+  onDestroy(() => {
+    window.removeEventListener("resize", updateDimensions);
+  });
 </script>
 
 <div
   id="app-container"
   class="mx-auto box-border flex w-full max-w-6xl flex-col p-4 text-black md:flex-row"
+  bind:this={container}
+  on:resize={updateDimensions}
 >
   <div
     id="Section-1"
