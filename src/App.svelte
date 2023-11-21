@@ -63,7 +63,7 @@
 >
   <div
     id="Section-1"
-    class="font-display mx-3 w-full self-center px-3 text-base sm:text-base md:mx-0 md:my-5 md:px-0 md:text-xs"
+    class="font-display mx-3 w-full self-center px-3 text-base md:mx-0 md:my-5 md:px-0"
   >
     <div
       id="card-padding"
