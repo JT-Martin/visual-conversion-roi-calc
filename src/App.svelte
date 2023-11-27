@@ -216,10 +216,13 @@
         </div>
       </div>
       <a
-        class="flex items-center justify-center gap-1 rounded-md bg-sky-500 p-3 font-sans font-black text-white transition-all hover:bg-sky-600"
+        class="group relative flex items-center justify-center gap-1 overflow-hidden rounded-md border border-transparent bg-gradient-to-b from-sky-500 to-sky-700 p-3 font-sans font-bold uppercase text-sky-100 transition-all duration-200 hover:from-emerald-500 hover:to-emerald-700 hover:shadow-md hover:shadow-emerald-700"
         href="https://www.facebook.com/joshua.martin.9003/"
         target="_blank"
       >
+        <span
+          class="absolute right-0 -mt-12 h-32 w-8 translate-x-12 rotate-12 transform bg-white opacity-10 transition-all duration-1000 ease-in-out group-hover:-translate-x-[700px]"
+        ></span>
         <span class="cta-button">Claim Your FREE Mock-Up</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
