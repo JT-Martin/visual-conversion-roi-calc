@@ -221,7 +221,7 @@
         target="_blank"
       >
         <span
-          class="absolute right-0 -mt-12 h-32 w-8 translate-x-12 rotate-12 transform bg-white opacity-10 transition-all duration-1000 ease-in-out group-hover:-translate-x-[700px]"
+          class="absolute right-0 -mt-12 h-32 w-8 translate-x-12 rotate-12 transform bg-white opacity-10 transition-all duration-500 ease-in-out group-hover:-translate-x-[700px]"
         ></span>
         <span class="cta-button">Claim Your FREE Mock-Up</span>
         <svg
