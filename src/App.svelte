@@ -1,5 +1,7 @@
 <script>
   import { onMount, onDestroy } from "svelte";
+  // Supports weights 300-900
+  import "@fontsource-variable/red-hat-display";
   let conversionRate = 10;
   let conversionAmount = 30;
   let conversionValue = 1000;
@@ -57,7 +59,7 @@
 
 <div
   id="app-container"
-  class="mx-auto box-border flex w-full max-w-6xl flex-col p-4 text-black md:flex-row"
+  class="mx-auto box-border flex w-full max-w-6xl flex-col p-4 font-sans text-black md:flex-row"
   bind:this={container}
   on:resize={updateDimensions}
 >
@@ -73,10 +75,12 @@
         <div class="flex flex-col">
           <label
             for="current-conversion-rate"
-            class="mb-1 box-border block font-semibold text-gray-700 antialiased"
-            >Current conversion rate on your most important page(e.g.
-            appointment booking page):</label
+            class="box-border block font-semibold text-gray-700 antialiased"
+            >Current conversion rate on your most important page:</label
           >
+          <div class="mb-1 font-normal text-gray-500">
+            e.g. appointment booking page
+          </div>
           <div
             class="box-border flex rounded border bg-white p-2 text-black antialiased focus-within:border-blue-500 {conversionRate
               ? 'border-gray-300'
@@ -116,10 +120,12 @@
         <div class="flex flex-col">
           <label
             for="current-conversion-value"
-            class="mb-1 box-border block font-semibold text-gray-700 antialiased"
-            >Conversion value(e.g. 1 call booked and 20% close rate with $5k
-            offer = $1k):</label
+            class="box-border block font-semibold text-gray-700 antialiased"
+            >Conversion value:</label
           >
+          <div class="mb-1 font-normal text-gray-500">
+            e.g. 1 call booked and 20% close rate with $5k offer = $1k
+          </div>
           <div
             class="box-border flex rounded border bg-white p-2 text-black antialiased focus-within:border-blue-500 {conversionValue
               ? 'border-gray-300'
@@ -136,12 +142,27 @@
           </div>
         </div>
         <div class="flex flex-col">
-          <label
-            for="conversion-rate-boost"
-            class="mb-1 box-border block font-semibold text-gray-700 antialiased"
-            >Boost in conversion rate from implementing calculator on page:</label
-          >
-          <div
+          <div class="flex justify-between">
+            <label
+              for="conversion-rate-boost"
+              class="mb-3 box-border block font-semibold text-gray-700 antialiased"
+              >Boost in conversion rate after adding calculator:</label
+            >
+          </div>
+          <input
+            class="h-3 appearance-none overflow-hidden rounded-lg bg-gray-400 text-gray-800"
+            type="range"
+            bind:value={conversionBoost}
+            min="0"
+            max="10"
+            step="0.1"
+          />
+          <div class="flex justify-between text-gray-500">
+            <div>0%</div>
+            <div class="font-medium text-black">{conversionBoost + "%"}</div>
+            <div>10%</div>
+          </div>
+          <!-- <div
             class="box-border flex rounded border bg-white p-2 text-black antialiased focus-within:border-blue-500 {conversionBoost
               ? 'border-gray-300'
               : 'border-red-400'}"
@@ -155,7 +176,16 @@
               required
             />
             <span>%</span>
-          </div>
+          </div> -->
+          <!-- <input
+            type="range"
+            bind:value={conversionBoost}
+            step="0.1"
+            required
+            min="0"
+            max="10"
+            class="[&::-webkit-slider-runnable-track]:bg-blue-gray-100 [&::-moz-range-track]:bg-blue-gray-100 inset-0 w-full cursor-pointer appearance-none bg-transparent [-webkit-appearance:none] focus:outline-none focus:outline-0 [&::-moz-range-thumb]:relative [&::-moz-range-thumb]:z-20 [&::-moz-range-thumb]:-mt-[3px] [&::-moz-range-thumb]:h-3.5 [&::-moz-range-thumb]:w-3.5 [&::-moz-range-thumb]:appearance-none [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:bg-white [&::-moz-range-thumb]:ring-2 [&::-moz-range-thumb]:ring-current [&::-moz-range-thumb]:[-webkit-appearance:none] [&::-moz-range-track]:h-full [&::-moz-range-track]:rounded-full [&::-webkit-slider-runnable-track]:h-full [&::-webkit-slider-runnable-track]:rounded-full [&::-webkit-slider-thumb]:relative [&::-webkit-slider-thumb]:z-20 [&::-webkit-slider-thumb]:-mt-[3px] [&::-webkit-slider-thumb]:h-3.5 [&::-webkit-slider-thumb]:w-3.5 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:border-0 [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:ring-2 [&::-webkit-slider-thumb]:ring-current [&::-webkit-slider-thumb]:[-webkit-appearance:none]"
+          /> -->
         </div>
       </div>
     </div>
@@ -239,6 +269,7 @@
           ></path>
         </svg>
       </a>
+
       <div
         id="Section-2-bottom"
         class="flex flex-col gap-2 text-sm min-[350px]:text-base min-[940px]:text-lg"
