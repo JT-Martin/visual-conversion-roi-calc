@@ -142,25 +142,45 @@
           </div>
         </div>
         <div class="flex flex-col">
-          <div class="flex justify-between">
+          <div class="mb-3 flex items-center justify-between">
             <label
               for="conversion-rate-boost"
-              class="mb-3 box-border block font-semibold text-gray-700 antialiased"
+              class="box-border block font-semibold text-gray-700 antialiased"
               >Boost in conversion rate after adding calculator:</label
             >
+            <div class="text-lg font-medium">{conversionBoost + "%"}</div>
           </div>
           <input
-            class="h-3 appearance-none overflow-hidden rounded-lg bg-gray-400 text-gray-800"
+            class="h-5 appearance-none overflow-hidden rounded-[10px] bg-gray-400 text-gray-800"
             type="range"
             bind:value={conversionBoost}
             min="0"
             max="10"
             step="0.1"
           />
-          <div class="flex justify-between text-gray-500">
+          <div
+            class="ml-[8px] mr-[8px] mt-1 flex justify-between text-gray-500"
+          >
+            <div class=" w-[4px]">|</div>
+            <div class="w-[4px]">|</div>
+            <div class="w-[4px]">|</div>
+            <div class="w-[4px]">|</div>
+            <div class="w-[4px]">|</div>
+            <div class="w-[4px]">|</div>
+            <div class="w-[4px]">|</div>
+            <div class="w-[4px]">|</div>
+            <div class="w-[4px]">|</div>
+            <div class="w-[4px]">|</div>
+            <div class=" w-[4px]">|</div>
+          </div>
+
+          <div class="mt-1 flex justify-between text-gray-500">
             <div>0%</div>
-            <div class="font-medium text-black">{conversionBoost + "%"}</div>
-            <div>10%</div>
+            <div>2%</div>
+            <div>4%</div>
+            <div>6%</div>
+            <div>8%</div>
+            <div class="mr-[-0.3em]">10%</div>
           </div>
           <!-- <div
             class="box-border flex rounded border bg-white p-2 text-black antialiased focus-within:border-blue-500 {conversionBoost
