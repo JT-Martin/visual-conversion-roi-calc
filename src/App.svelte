@@ -142,13 +142,15 @@
           </div>
         </div>
         <div class="flex flex-col">
-          <div class="mb-3 flex items-center justify-between">
+          <div class="mb-3 flex items-center justify-between gap-3">
             <label
               for="conversion-rate-boost"
               class="box-border block font-semibold text-gray-700 antialiased"
               >Boost in conversion rate after adding calculator:</label
             >
-            <div class="text-lg font-medium">{conversionBoost + "%"}</div>
+            <div class="min-w-[39px] text-right text-lg font-medium">
+              {conversionBoost + "%"}
+            </div>
           </div>
           <input
             class="h-[30px] appearance-none overflow-hidden rounded-[15px] bg-gray-300 text-gray-800"
@@ -212,7 +214,7 @@
   </div>
   <div
     id="Section-2"
-    class="w-full rounded-2xl bg-gray-900 p-5 shadow-lg sm:p-8"
+    class="w-full rounded-2xl border border-gray-700 bg-gray-900 p-5 shadow-lg sm:p-8"
   >
     <div class="font-display flex h-full flex-col justify-start gap-5">
       <div
