@@ -151,7 +151,7 @@
             <div class="text-lg font-medium">{conversionBoost + "%"}</div>
           </div>
           <input
-            class="h-5 appearance-none overflow-hidden rounded-[10px] bg-gray-400 text-gray-800"
+            class="h-[30px] appearance-none overflow-hidden rounded-[15px] bg-gray-300 text-gray-800"
             type="range"
             bind:value={conversionBoost}
             min="0"
@@ -159,7 +159,7 @@
             step="0.1"
           />
           <div
-            class="ml-[8px] mr-[8px] mt-1 flex justify-between text-gray-500"
+            class="ml-[13px] mr-[13px] mt-1 flex justify-between text-gray-500"
           >
             <div class=" w-[4px]">|</div>
             <div class="w-[4px]">|</div>
@@ -175,12 +175,12 @@
           </div>
 
           <div class="mt-1 flex justify-between text-gray-500">
-            <div>0%</div>
+            <div class="ml-[0.3em]">0%</div>
             <div>2%</div>
             <div>4%</div>
             <div>6%</div>
             <div>8%</div>
-            <div class="mr-[-0.3em]">10%</div>
+            <div class="">10%</div>
           </div>
           <!-- <div
             class="box-border flex rounded border bg-white p-2 text-black antialiased focus-within:border-blue-500 {conversionBoost
